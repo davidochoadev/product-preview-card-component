@@ -152,8 +152,8 @@ body {
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr;
       border-radius: 10px;
-      width: 600px;
-      height: 480px;
+      max-width: 600px;
+      max-height: 480px;
       margin: 0 1rem;
    }
 
