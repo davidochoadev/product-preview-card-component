@@ -27,9 +27,9 @@ body {
 
 .main__container {
    display: grid;
-   grid-template-rows: 2fr 3fr;
-   width: 90%;
-   max-height: 90%;
+   grid-template-rows: 1fr auto;
+   max-width: 90%;
+   max-height: fit-content;
    overflow: hidden;
    border-radius: 15px;
    background-color: white;
@@ -40,9 +40,12 @@ body {
    height: 100%;
    object-fit: cover;
 }
-.main__container > picture {
+.main__picture-mobile {
    overflow: hidden;
    height: min-content;
+}
+.main__picture-desktop {
+   display: none;
 }
 .main__content {
    padding: 20px;
@@ -58,27 +61,63 @@ body {
 .content__title {
    font-family: 'Fraunces', serif;
    font-weight: 700;
-   font-size: 3rem;
-   line-height: 3rem;
+   font-size: 2.2rem;
+   line-height: 2.2rem;
    padding: 0.5rem 0;
    color: var(--very-dark-blue);
 }
 
 .content__description {
-   font-size: 1.4rem;
+   font-size: 1.0rem;
    padding: 1rem 0;
 }
 
 .price__container {
    display: flex;
    width: 100%;
-   padding: 1rem 0;
+   padding: 0.5rem 0;
+   align-items: center;
 }
 
 .price__container :nth-child(1) {
-   font-size: 3rem;
-   color: red;
+   font-size: 2.2rem;
+   color: var(--dark-cyan);
    font-family: 'Fraunces', serif;
    font-weight: 700;
-   
+   padding: 0 1.2rem 0 0;
+}
+
+.price__container :nth-child(2) {
+   text-decoration: line-through;
+   font-size: 1rem;
+}
+
+.button__add-to-cart {
+   width: 100%;
+   padding: 1rem 0;
+   background-color: var(--dark-cyan);
+   color: var(--white);
+   border-radius: 10px;
+   font-size: 1rem;
+   border:0;
+   transition-duration: 0.3s;
+   cursoir: pointer;
+   margin: 0.5rem 0;
+}
+
+.button__add-to-cart:hover {
+   background-color: var(--very-dark-blue);
+}
+@media screen and (min-width: 375px) {
+   .main__picture-mobile{
+      display: none;
+   }
+   .main__picture-desktop {
+      display: inline-block;
+   }
+
+   .main__container {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+   }
 }
